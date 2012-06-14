@@ -61,6 +61,7 @@ Lawnchair.adapter('indexed-db', (function(){
             win();
         };
         request.onupgradeneeded = function(event) {
+            self.db = request.result;
             upgrade(event.oldVersion, event.newVersion);
         };
         request.onsuccess = function(event) {
